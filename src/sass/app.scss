@@ -1,0 +1,10 @@
+$primary: #F87575;
+$secondary: #F0F7F4;
+$success: #778DA9;
+$danger: #32292F;
+$warning: #F24236;
+$info: #ffc;
+
+@import "styles.scss";
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
