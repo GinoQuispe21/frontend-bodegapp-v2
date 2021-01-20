@@ -76,10 +76,10 @@
                             lobortis per placerat conubia dapibus lectus erat, tristique interdum curabitur blandit etiam nascetur vulputate. 
                             Curabitur vel elementum cubilia per erat, dictumst orci vehicula convallis scelerisque, duis sapien egestas faucibus.
                         </p>
-                        <b-btn class="btn tranparent" id="sign-up-btn">Sign up</b-btn>
+                        <b-btn class="btn tranparent" id="sign-in-btn">Sign in</b-btn>
                     </div>
 
-                    <img src="../assets/bodega.svg" class="image" alt="">
+                    <img src="../assets/bodega2.svg" class="image" alt="">
                 </div>
                 <div class="panel right-panel">
                     <div class="content">
@@ -92,7 +92,7 @@
                         <b-btn class="btn tranparent" id="sign-up-btn">Sign up</b-btn>
                     </div>
 
-                    <img src="../assets/welcome.svg" class="image" alt="">
+                    <img src="../assets/welcome2.svg" class="image" alt="">
                 </div>
             </div>
         </b-col>
@@ -137,11 +137,9 @@
 .btn.transparent{
     margin: 0;
     background: none;
-    border: 2px solid white;
+    border: 2px solid #F0F7F4; 
     width: 130px;
-    height: 41px;
-    font-weight: 600;
-    font-size: 0.8rem;
+
 }
 
 .panel h3 {
