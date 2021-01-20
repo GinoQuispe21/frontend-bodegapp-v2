@@ -14,9 +14,42 @@
                             <input type = "password" placeholder="Password">
                         </div>
 
-                       <b-btn @click="login()">Sign in </b-btn>
+                       <b-btn class="btn-signin-signup" @click="login()">Sign in </b-btn>
 
                         <p class ="social-text"> Or sign in with social platforms </p>
+                        <div class = "social-media">
+                            <a href = "#" class = "social-icon">
+                                <i class = "fab fa-facebook-f"></i>
+                            </a>
+                            <a href = "#" class = "social-icon">
+                                <i class = "fab fa-twitter"></i>
+                            </a>
+                            <a href = "#" class = "social-icon">
+                                <i class = "fab fa-google"></i>
+                            </a>
+                            <a href = "#" class = "social-icon">
+                                <i class = "fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </b-form>
+                    <b-form action = "" class = "sign-up-form">
+                        <h2 class = "title">Sign up</h2>
+                        <div class = "input-field">
+                            <i class = "fas fa-user"></i>
+                            <input type="text" placeholder="Username">
+                        </div>
+                        <div class = "input-field">
+                            <i class = "fas fa-user"></i>
+                            <input type = "text" placeholder="Email">
+                        </div>
+                        <div class = "input-field">
+                            <i class = "fas fa-user"></i>
+                            <input type = "password" placeholder="Password">
+                        </div>
+
+                       <b-btn class="btn-signin-signup" @click="login()">Sign up </b-btn>
+
+                        <p class ="social-text"> Or sign up with social platforms </p>
                         <div class = "social-media">
                             <a href = "#" class = "social-icon">
                                 <i class = "fab fa-facebook-f"></i>
@@ -35,7 +68,32 @@
                 </div>
             </div>
             <div class = "panels-container">
+                <div class="panel left-panel">
+                    <div class="content">
+                        <h3>New Here ?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit mi, pharetra ullamcorper dapibus phasellus interdum libero tempus, 
+                            eleifend placerat morbi inceptos cubilia proin ornare. Lacus diam rutrum nulla porttitor imperdiet augue eros turpis, pellentesque 
+                            lobortis per placerat conubia dapibus lectus erat, tristique interdum curabitur blandit etiam nascetur vulputate. 
+                            Curabitur vel elementum cubilia per erat, dictumst orci vehicula convallis scelerisque, duis sapien egestas faucibus.
+                        </p>
+                        <b-btn class="btn tranparent" id="sign-up-btn">Sign up</b-btn>
+                    </div>
 
+                    <img src="../assets/bodega.svg" class="image" alt="">
+                </div>
+                <div class="panel right-panel">
+                    <div class="content">
+                        <h3>One of us ?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit mi, pharetra ullamcorper dapibus phasellus interdum libero tempus, 
+                            eleifend placerat morbi inceptos cubilia proin ornare. Lacus diam rutrum nulla porttitor imperdiet augue eros turpis, pellentesque 
+                            lobortis per placerat conubia dapibus lectus erat, tristique interdum curabitur blandit etiam nascetur vulputate. 
+                            Curabitur vel elementum cubilia per erat, dictumst orci vehicula convallis scelerisque, duis sapien egestas faucibus.
+                        </p>
+                        <b-btn class="btn tranparent" id="sign-up-btn">Sign up</b-btn>
+                    </div>
+
+                    <img src="../assets/welcome.svg" class="image" alt="">
+                </div>
             </div>
         </b-col>
     </v-card>
@@ -52,7 +110,7 @@
     box-sizing: border-box;
 }
 
-.btn{
+.btn-signin-signup{
   width: 150px;
   height: 49px;
   border: none;
@@ -72,4 +130,27 @@
     color: white;
 }
 
+.image{
+    width: 100%;
+}
+
+.btn.transparent{
+    margin: 0;
+    background: none;
+    border: 2px solid white;
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.panel h3 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+.right-panel .content .right-panel .image{
+  transform: translateX(800px);
+}
 </style>
