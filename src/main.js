@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import vuetify from 'vuetify'
 import App from './App.vue'
 import router from "@/router";
 import bootstrap_vue from 'bootstrap-vue'
@@ -8,6 +9,7 @@ import VueAxios from 'vue-axios';
 Vue.config.productionTip = false
 Vue.use(bootstrap_vue)
 Vue.use(VueAxios, axios)
+Vue.use(vuetify)
 
 new Vue({
   router,
