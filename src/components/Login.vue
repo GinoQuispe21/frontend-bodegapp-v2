@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <a href = "#">Forget password?</a>
-                            <p>Don't have an  account? <a href="#">Register here</a></p>
+                            <p>Don't have an  account? <a href="/register">Register here</a></p>
                         </form>
                     </div>
                 </div>
