@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <v-card class="wall2">
         <div>
             <br/>
             <br/>
@@ -25,7 +25,7 @@
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "password" placeholder ="Confirm-Password" class ="form-control my-3 p-4">
+                                    <input type = "password" placeholder ="Confirm-Password" id = "myCPassword" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -33,7 +33,7 @@
                                     <button type ="button" class = "register mt-3 mb-5">Register</button>
                                 </div>
                             </div>
-                            <p>Already have an account? <a href="/">Sign in here</a></p>
+                            <p>Already have an account? <router-link to="/">Sign in here</router-link></p>
                         </form>
                     </div>
                     <div class = "col-lg-5">
@@ -47,15 +47,15 @@
 
 <script>
 export default {
-    methods:
-        function showPassword(){
-        var x = document.getElementById("myPassword")
-        if(x.type === "password" ){
-            alert("funca");
-            x.type = "text"; 
-        }
-        else{
-            x.type = "password";
+    methods: {
+        showPassword(){
+            var x = document.getElementById("myPassword")
+            if(x.type === "password" ){
+                x.type = "text"; 
+            }
+            else{
+                x.type = "password";
+            }
         }
     }
 }
@@ -64,29 +64,34 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style scooped lang="scss">
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     
 }
-body{
+.wall2{
+    height: 100%;
     background: #fae2e2;
+
+    a{
+        color: #ffffff;
+    }
+    img{
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .row{
+        background-color: #778DA9;
+        border-radius: 30px;
+        box-shadow: 12px 12px 22px;
     
+    }
 }
-.row{
-    background-color: #778DA9;
-    border-radius: 30px;
-    box-shadow: 12px 12px 22px;
-}
-a{
-    color: #ffffff;
-}
-img{
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
+    
+
+
 .register{
     text-align: center;
     border: none;
@@ -97,11 +102,13 @@ img{
     color: white;
     border-radius: 4px;
     font-weight: bold;
+
+    &:hover{
+        background: white;
+        border: 1px black;
+        color: black;
+    }
 }
-.register:hover{
-    background: white;
-    border: 1px black;
-    color: black;
-}
+
 
 </style>

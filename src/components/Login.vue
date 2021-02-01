@@ -1,6 +1,6 @@
 
 <template>
-    <v-card>
+    <v-card class="wall">
         <div>
             <br/>
             <br/>
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                             <a href = "#">Forget password?</a>
-                            <p>Don't have an  account? <a href="/register">Register here</a></p>
+                            <p>Don't have an  account? <router-link to="/register">Register here</router-link></p>
                         </form>
                     </div>
                 </div>
@@ -54,24 +54,27 @@
 
 </script>
 
-<style lang="scss">
+<style scooped lang="scss">
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+.wall{
+    height: 100%;
     background: #778DA9;
+
+    .row{
+        background-color: #fae2e2;
+        border-radius: 30px;
+        box-shadow: 12px 12px 22px;
+    }
+    img{
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
 }
-.row{
-    background-color: #fae2e2;
-    border-radius: 30px;
-    box-shadow: 12px 12px 22px;
-}
-img{
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
+
 .login{
     text-align: center;
     border: none;
@@ -82,10 +85,12 @@ img{
     color: white;
     border-radius: 4px;
     font-weight: bold;
+
+    &:hover{
+        background: white;
+        border: 1px black;
+        color: black;
+    }
 }
-.login:hover{
-    background: white;
-    border: 1px black;
-    color: black;
-}
+
 </style>
