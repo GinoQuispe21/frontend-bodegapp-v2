@@ -69,18 +69,19 @@ export default {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color:  #f0f7f4
+    
 }
 body{
     background: #fae2e2;
+    
 }
 .row{
-    background-color: #778da9;
+    background-color: #778DA9;
     border-radius: 30px;
     box-shadow: 12px 12px 22px;
 }
 a{
-    color: #000000;
+    color: #ffffff;
 }
 img{
     border-top-right-radius: 30px;
