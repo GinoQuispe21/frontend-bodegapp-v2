@@ -9,7 +9,7 @@
             <div class="container">
                 <div class = "row no-gutters">
                     <div class = "col-lg-7 px-5 pt-5">
-                        <h1 class = "Font-weight-bold py-3">BodegApp</h1>
+                        <img src = "../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
                         <h3>First time here? Sign up to us!</h3>
                         <form>
                             <div class="form-row">
@@ -20,12 +20,13 @@
                             <div class="form-row">
                                 <div class = "col-lg-7">
                                     <input type = "password" placeholder ="Password" id = "myPassword" class ="form-control my-3 p-4">
-                                    <input type="checkbox" @click="showPassword">Show Password
+                                    <input type="checkbox" @click="showPassword"> Show Password
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
                                     <input type = "password" placeholder ="Confirm-Password" id = "myCPassword" class ="form-control my-3 p-4">
+                                    <input type="checkbox" @click="showPassword"> Show Password
                                 </div>
                             </div>
                             <div class="form-row">
@@ -33,7 +34,7 @@
                                     <button type ="button" class = "register mt-3 mb-5">Register</button>
                                 </div>
                             </div>
-                            <p>Already have an account? <router-link to="/">Sign in here</router-link></p>
+                            <p>Already have an account? <router-link to="/" class ="back-login">Sign in here</router-link></p>
                         </form>
                     </div>
                     <div class = "col-lg-5">
@@ -73,8 +74,8 @@ export default {
 }
 .wall2{
     height: 100%;
-    background: #fae2e2;
-
+    background: rgb(242,66,54);
+    background: linear-gradient(90deg, rgba(242,66,54,1) 0%, rgba(248,117,117,1) 20%, rgba(114,141,176,1) 100%);
     a{
         color: #ffffff;
     }
@@ -83,7 +84,7 @@ export default {
         border-bottom-right-radius: 30px;
     }
     .row{
-        background-color: #778DA9;
+        background-color: #f0f7f4;
         border-radius: 30px;
         box-shadow: 12px 12px 22px;
     
