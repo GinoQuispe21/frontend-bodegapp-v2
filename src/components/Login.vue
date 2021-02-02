@@ -13,7 +13,8 @@
                         <img src ="../assets/si.jpg" class = "img-fluid" alt ="">
                     </div>
                     <div class = "col-lg-7 px-5 pt-5">
-                        <h1 class = "Font-weight-bold py-3">BodegApp</h1>
+                        <br/><br/>
+                        <img src = "../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
                         <h3>Sign into your account</h3>
                         <form>
                             <div class="form-row">
@@ -62,10 +63,11 @@
 }
 .wall{
     height: 100%;
-    background: #778DA9;
+    background: rgb(119,141,169);
+    background: linear-gradient(90deg, rgba(119,141,169,1) 0%, rgba(248,117,117,1) 75%, rgba(242,66,54,1) 100%);
 
     .row{
-        background-color: #fae2e2;
+        background-color: #f0f7f4;
         border-radius: 30px;
         box-shadow: 12px 12px 22px;
     }
@@ -81,16 +83,21 @@
     outline: none;
     height: 50px;
     width: 100%;
-    background-color: black;
+    background-color: #32292F;
     color: white;
     border-radius: 4px;
     font-weight: bold;
 
     &:hover{
-        background: white;
-        border: 1px black;
-        color: black;
+        background: #f87575;
+        border: 1px  #f0f7f4;
+        color : #f0f7f4;;
     }
+}
+
+.bodegaap{
+    height: 15%;
+    width: 52%;
 }
 
 </style>
