@@ -76,9 +76,7 @@ export default {
     height: 100%;
     background: rgb(242,66,54);
     background: linear-gradient(90deg, rgba(242,66,54,1) 0%, rgba(248,117,117,1) 20%, rgba(114,141,176,1) 100%);
-    a{
-        color: #ffffff;
-    }
+    
     img{
         border-top-right-radius: 30px;
         border-bottom-right-radius: 30px;
