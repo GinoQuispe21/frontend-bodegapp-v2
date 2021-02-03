@@ -10,32 +10,34 @@
                 <div class = "row no-gutters">
                     <div class = "col-lg-7 px-5 pt-5">
                         <img src = "../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
-                        <h3>First time here? Sign up to us!</h3>
-                        <form>
+                        <h3>Please complete the following information</h3>
+                        <form class="text-info">
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "email" placeholder ="Email-Address" class ="form-control my-3 p-4">
+                                    <input type = "name" placeholder ="First name" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "password" placeholder ="Password" id = "myPassword" class ="form-control my-3 p-4">
-                                    <input type="checkbox" @click="showPassword"> Show Password
+                                    <input type = "lastname" placeholder ="Last tname" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "password" placeholder ="Confirm-Password" id = "myCPassword" class ="form-control my-3 p-4">
-                                    <input type="checkbox" @click="showPassword"> Show Password
+                                    <input type = "dni" placeholder ="DNI" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <router-link to="/register2" class ="go-register2"><button type ="button" class = "register mt-3 mb-5">Register</button></router-link>
+                                    <input type = "phone" placeholder ="Phone-Number" class ="form-control my-3 p-4">
                                 </div>
                             </div>
-                            <p>Already have an account? <router-link to="/" class ="back-login">Sign in here</router-link></p>
                         </form>
+                        <div class="form-row">
+                            <div class = "col-lg-7">
+                                <router-link to="/register2" class ="go-register2"><button type ="button" class = "register mt-3 mb-5">Register</button></router-link>
+                            </div>
+                        </div>
                     </div>
                     <div class = "col-lg-5">
                         <img src ="../assets/no.jpg" class = "img-fluid" alt ="">
@@ -48,50 +50,34 @@
 
 <script>
 export default {
-    methods: {
-        showPassword(){
-            var x = document.getElementById("myPassword")
-            if(x.type === "password" ){
-                x.type = "text"; 
-            }
-            else{
-                x.type = "password";
-            }
-        }
-    }
+    
 }
-
-
-
 </script>
 
 <style scooped lang="scss">
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    
 }
-.wall2{
+.wall{
     height: 100%;
-    background: rgb(242,66,54);
-    background: linear-gradient(90deg, rgba(242,66,54,1) 0%, rgba(248,117,117,1) 20%, rgba(114,141,176,1) 100%);
-    
-    img{
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-    }
+    background: rgb(119,141,169);
+    background: linear-gradient(90deg, rgba(119,141,169,1) 0%, rgba(248,117,117,1) 75%, rgba(242,66,54,1) 100%);
+
     .row{
         background-color: #f0f7f4;
         border-radius: 30px;
         box-shadow: 12px 12px 22px;
-    
+    }
+    img{
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
     }
 }
-    
 
-
-.register{
+.login{
     text-align: center;
     border: none;
     outline: none;
@@ -114,4 +100,7 @@ export default {
     width: 52%;
 }
 
+.si{
+    color: red;
+}
 </style>
