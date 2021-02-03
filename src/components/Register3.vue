@@ -10,36 +10,36 @@
                 <div class = "row no-gutters">
                     <div class = "col-lg-7 px-5 pt-1">
                         <img src = "../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
-                        <h3>Please complete the following information</h3>
+                        <h3>Complete the last information about</h3>
                         <form class="text-info">
                             <div class="form-row">
                                 <div class = "col-lg-8">
-                                    <p style="color: black">Write your first name:</p>
-                                    <input type = "name" placeholder ="First name" class ="form-control my-3 p-4">
+                                    <p style="color: black">Write your address:</p>
+                                    <input type = "address" placeholder ="Address" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-8">
-                                    <p style="color: black">Write your last name:</p>
-                                    <input type = "lastname" placeholder ="Last tname" class ="form-control my-3 p-4">
+                                    <p style="color: black">Write your birthdate:</p>
+                                    <input type = "b_date" placeholder ="yy/mm/dd" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-8">
-                                    <p style="color: black">Write your national identity document (DNI):</p>
-                                    <input type = "dni" placeholder ="DNI" class ="form-control my-3 p-4">
+                                    <p style="color: black">Write the district where you live :</p>
+                                    <input type = "district" placeholder ="District" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-8">
-                                    <p style="color: black">Write your phone, please:</p>
-                                    <input type = "phone" placeholder ="Phone-Number" class ="form-control my-3 p-4">
+                                    <p style="color: black">Write the country where you live :</p>
+                                    <input type = "country" placeholder ="Country" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                         </form>
                         <div class="form-row">
                             <div class = "col-lg-8">
-                                <router-link to="/register3" class ="go-register3"><button type ="button" class = "register mt-3 mb-4">Continue</button></router-link>
+                                <router-link to="/" class ="go"><button type ="button" class = "register mt-3 mb-4">Register</button></router-link>
                                 <p>Already have an account? <router-link to="/" class ="back-login mt-3">Sign in here</router-link></p>
                             </div>
                         </div>
