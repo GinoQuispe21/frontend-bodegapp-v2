@@ -1,6 +1,5 @@
-
 <template>
-    <v-card class="wall">
+  <v-card class="forgotwall">
         <div>
             <br/>
             <br/>
@@ -15,25 +14,22 @@
                     <div class = "col-lg-7 px-5 pt-5">
                         <br/><br/>
                         <img src = "../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
-                        <h3>Sign into your account</h3>
-                        <form>
+                        <h3>Change your password. Try remebering this one </h3>
+                        <form name="cPassword">
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "email" placeholder ="Email-Address" class ="form-control my-3 p-4">
+                                    <input type = "password" name="password1" id="myNPassword" placeholder ="New-Password" class ="form-control my-3 p-4">
+                                    <input type="checkbox" @click="showPassword"> Show Password
+                                </div>
+                                <div class = "col-lg-7">
+                                    <input type = "password" name="password2" placeholder ="Confirm-New-Password" class ="form-control my-3 p-4">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "password" placeholder ="******" class ="form-control my-3 p-4">
+                                    <button @click="validationCP()" class = "change mt-3 mb-5">Change Password </button>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class = "col-lg-7">
-                                    <button type ="button" class = "login mt-3 mb-5">Login</button>
-                                </div>
-                            </div>
-                            <router-link to="/forgotpassword">Forget password?</router-link>
-                            <p>Don't have an  account? <router-link to="/register">Register here</router-link></p>
                         </form>
                     </div>
                 </div>
@@ -43,25 +39,59 @@
 </template>
 
 <script>
-    //import { baseURL } from '@/baseURL';
-    export default  {
-        name: "LogIn",
-        data: ()=> {
-            return{
+export default {
+    methods:{
+        showPassword(){
+            var x = document.getElementById("myNPassword")
+            if(x.type === "password" ){
+                x.type = "text"; 
+            }
+            else{
+                x.type = "password";
+            }
+        },
+        validationV1(){
+            var x = document.forms["cPassword"]["password1"].value;
+            var y = document.forms["cPassword"]["password2"].value;
+            if (x == "" || y == ""){
+                return true;
+            }
+        },
 
+         validationV2(){
+            var x = document.forms["cPassword"]["password1"].value;
+            var y = document.forms["cPassword"]["password2"].value;
+            if (x == y){
+                return true;
+            }
+            else{
+                return false;
+            }
+        },  
+        validationCP(){
+            if(this.validationV1() == true){
+                alert("Please input the password");
+            }
+            else if(this.validationV2() == true){
+                alert("Password changed succesfully");
+                this.$router.push("/");
+            }
+            else{
+                alert("Passwords do not match, try again");
             }
         }
-    }
 
+    }
+}
 </script>
 
 <style scooped lang="scss">
-*{
+  *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-.wall{
+.forgotwall{
     height: 100%;
     background: rgb(119,141,169);
     background: linear-gradient(90deg, rgba(119,141,169,1) 0%, rgba(248,117,117,1) 75%, rgba(242,66,54,1) 100%);
@@ -77,7 +107,7 @@
     }
 }
 
-.login{
+.change{
     text-align: center;
     border: none;
     outline: none;
@@ -99,5 +129,4 @@
     height: 15%;
     width: 52%;
 }
-
 </style>
