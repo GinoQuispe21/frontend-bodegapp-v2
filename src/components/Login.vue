@@ -87,6 +87,7 @@
     color: white;
     border-radius: 4px;
     font-weight: bold;
+    transition: all 0.2s ease-in-out;
 
     &:hover{
         background: #f87575;
