@@ -23,7 +23,7 @@
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <button @click="validationP()" class = "forget mt-3 mb-5">Remind me</button>
+                                    <button type ="button" v-on:click="validationP()" class = "forget mt-3 mb-5">Remind me</button>
                                 </div>
                             </div>
                         </form>
@@ -38,7 +38,6 @@
 export default {
     methods:{
         validationP(){
-            console.log("funca")
             var x = document.forms["fPassword"]["email1"].value;
             if (x == ""){
             alert("Please input an email");
@@ -84,7 +83,7 @@ export default {
     color: white;
     border-radius: 4px;
     font-weight: bold;
-
+    transition: all 0.2s ease-in-out;
     &:hover{
         background: #f87575;
         border: 1px  #f0f7f4;

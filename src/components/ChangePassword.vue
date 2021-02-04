@@ -27,7 +27,7 @@
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <button @click="validationCP()" class = "change mt-3 mb-5">Change Password </button>
+                                    <button type ="button" @click="validationCP()" class = "change mt-3 mb-5">Change Password </button>
                                 </div>
                             </div>
                         </form>
@@ -117,7 +117,7 @@ export default {
     color: white;
     border-radius: 4px;
     font-weight: bold;
-
+    transition: all 0.2s ease-in-out;
     &:hover{
         background: #f87575;
         border: 1px  #f0f7f4;
