@@ -9,7 +9,7 @@
             <div class="container">
                 <div class = "row no-gutters">
                     <div class = "col-lg-7 px-5 pt-1">
-                        <img src = "../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
+                        <img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
                         <h3>Please complete the following information</h3>
                         <form class="text-info">
                             <div class="form-row">
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class = "col-lg-5">
-                        <img src ="../assets/no.jpg" class = "img-fluid" alt ="">
+                        <img src ="../../assets/no.jpg" class = "img-fluid" alt ="">
                     </div>
                 </div>
             </div>
