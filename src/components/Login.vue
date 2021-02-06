@@ -19,17 +19,17 @@
                         <form>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "email" placeholder ="Email-Address" class ="form-control my-3 p-4">
+                                    <input id="email" type = "email" placeholder ="Email-Address" class ="form-control my-3 p-4" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "password" placeholder ="******" class ="form-control my-3 p-4">
+                                    <input id="password" type = "password" placeholder ="******" class ="form-control my-3 p-4" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <button type ="button" class = "login mt-3 mb-5">Login</button>
+                                    <button @click="validation()" type ="button" class = "login mt-3 mb-5">Login</button>
                                 </div>
                             </div>
                             <router-link to="/forgotpassword">Forget password?</router-link>
@@ -50,6 +50,8 @@
             return{
 
             }
+        },
+        methods:{
         }
     }
 
