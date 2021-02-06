@@ -9,11 +9,11 @@
             <div class="container">
                 <div class = "row no-gutters">
                     <div class = "col-lg-5">
-                        <img src ="../assets/si.jpg" class = "img-fluid" alt ="">
+                        <img src ="../../assets/si.jpg" class = "img-fluid" alt ="">
                     </div>
                     <div class = "col-lg-7 px-5 pt-5">
                         <br/><br/>
-                        <img src = "../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
+                        <img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
                         <h3>Forgot your password? Send to your email a chance to change it!</h3>
                         <form name="fPassword">
                             <div class="form-row">
