@@ -29,7 +29,9 @@
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <button @click="validation()" type ="button" class = "login mt-3 mb-5">Login</button>
+                                    <router-link to="/homepage">
+                                        <button type ="button" class = "login mt-3 mb-5">Login</button>
+                                    </router-link>
                                 </div>
                             </div>
                             <router-link to="/forgotpassword">Forget password?</router-link>
