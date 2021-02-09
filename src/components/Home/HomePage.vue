@@ -1,6 +1,6 @@
 <template>
     <v-card height="100%">
-        <v-toolbar color="bg-primary" dark>
+        <v-toolbar color="bg-warning" dark>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-btn text to="/" class="text-info">
@@ -9,11 +9,11 @@
                 <v-divider vertical></v-divider>
             </v-toolbar-items>
         </v-toolbar>
-        <v-tabs vertical>
-            <v-tab class="text-info bg-primary">
+        <v-tabs color="bg-info"  vertical>
+            <v-tab class="text-info bg-success">
                 Register Product
             </v-tab>
-            <v-tab class="text-info bg-primary">
+            <v-tab class="text-info bg-warning">
                 Register Client
             </v-tab>
             <v-tab-item>
