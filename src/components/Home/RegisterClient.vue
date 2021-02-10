@@ -1,6 +1,11 @@
 <template>
     <v-card>
-        <h2>asdasdadasda</h2>
+         <div>
+            <br/>
+        </div>
+        <div>
+        <h1>Registrar Cliente</h1>
+        </div>
     </v-card>
 </template>
 
@@ -13,4 +18,4 @@ export default {
 
 <style scooped lang="scss">
 
-</style>
+</style>    
