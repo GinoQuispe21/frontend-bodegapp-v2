@@ -70,7 +70,7 @@ export default {
         },  
         validationCP(){
             if(this.validationV1() == true){
-                alert("Please input the password");
+                this.$swal('Please input the password');
             }
             else if(this.validationV2() == true){
                 alert("Password changed succesfully");
@@ -79,7 +79,7 @@ export default {
             else{
                 alert("Passwords do not match, try again");
             }
-        }
+        },
 
     }
 }
@@ -129,4 +129,12 @@ export default {
     height: 15%;
     width: 52%;
 }
+
+@import '~sweetalert2/src/variables';
+
+$swal2-background: #F24236;
+$swal2-color-text: #F0F7F4;
+
+@import '~sweetalert2/src/sweetalert2';
+
 </style>
