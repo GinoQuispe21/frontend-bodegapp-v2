@@ -10,7 +10,7 @@
             </v-toolbar-items>
         </v-toolbar>
         <v-tabs color="bg-info"  vertical>
-            <v-tab class="text-info bg-success">
+            <v-tab class="text-info bg-warning">
                 Register Product
             </v-tab>
             <v-tab class="text-info bg-warning">
