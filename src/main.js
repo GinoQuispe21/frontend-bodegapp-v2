@@ -6,6 +6,7 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import vuetify from './plugins/vuetify';
+import VueSweetalert2 from 'vue-sweetalert2';
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
@@ -13,6 +14,7 @@ Vue.use(BootstrapVueIcons)
 Vue.config.productionTip = false
 Vue.use(bootstrap_vue)
 Vue.use(VueAxios, axios)
+Vue.use(VueSweetalert2)
 
 new Vue({
   router,
