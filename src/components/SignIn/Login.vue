@@ -16,22 +16,20 @@
                         <br/><br/>
                         <img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
                         <h3>Sign into your account</h3>
-                        <form>
+                        <form name="login-form">
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input id="email" type = "email" placeholder ="Email-Address" class ="form-control my-3 p-4" required>
+                                    <input type = "email" name="email" id="email" placeholder ="Email-Address" class ="form-control my-3 p-4" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input id="password" type = "password" placeholder ="******" class ="form-control my-3 p-4" required>
+                                    <input type = "password" name="password" id="password"  placeholder ="******" class ="form-control my-3 p-4" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <router-link to="/homepage">
-                                        <button type ="button" class = "login mt-3 mb-5">Login</button>
-                                    </router-link>
+                                    <button @click="validationLogin()" type ="button" class = "login mt-3 mb-5">Login</button>
                                 </div>
                             </div>
                             <router-link to="/forgotpassword">Forget password?</router-link>
@@ -54,7 +52,27 @@
             }
         },
         methods:{
-        
+            validationLogin(){
+                var Email = document.forms["login-form"]["email"].value;
+                var Password = document.forms["login-form"]["password"].value;
+
+                if((Email === "gino_21quispe@outlook.com") && (Password === "123")){
+                    this.$swal.fire(
+                    'Good job!',
+                    'You clicked the button!',
+                    'success'
+                    ).then(this.$router.push("/homepage"));
+                }
+                else{
+                    this.$swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                        footer: '<a href>Why do I have this issue?</a>'
+                        }
+                    )
+                }
+            }
         }
     }
 
@@ -105,4 +123,12 @@
     height: 15%;
     width: 52%;
 }
+
+@import '~sweetalert2/src/variables';
+
+$swal2-background: #f0f7f4;
+
+@import '~sweetalert2/src/sweetalert2';
+
+
 </style>

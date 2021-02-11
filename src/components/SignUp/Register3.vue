@@ -9,9 +9,9 @@
             <div class="container">
                 <div class = "row no-gutters">
                     <div class = "col-lg-7 px-5 pt-1">
-                        <img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
-                        <h3>Complete the last information about</h3>
-                        <form class="text-info">
+                        <img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3 px-3">
+                        <h3 class="px-3">Complete the last information about</h3>
+                        <form class="text-info px-3">
                             <div class="form-row">
                                 <div class = "col-lg-8">
                                     <p style="color: black">Write your address:</p>
@@ -37,9 +37,9 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="form-row">
+                        <div class="form-row px-3">
                             <div class = "col-lg-8">
-                                <router-link to="/" class ="go"><button type ="button" class = "register mt-3 mb-4">Register</button></router-link>
+                                <router-link to="/" class ="go"><button @click="register()" type ="button" class = "register mt-3 mb-4">Register</button></router-link>
                                 <p>Already have an account? <router-link to="/" class ="back-login mt-3">Sign in here</router-link></p>
                             </div>
                         </div>
@@ -55,7 +55,21 @@
 
 <script>
 export default {
-    
+    name: "Register3",
+    data: ()=>{
+        return{
+
+        }
+    },
+    methods:{
+        register(){
+            this.$swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            ).then(this.$router.push("/homepage"));
+        }
+    }
 }
 </script>
 
@@ -109,5 +123,11 @@ export default {
     height: 15%;
     width: 52%;
 }
+
+@import '~sweetalert2/src/variables';
+
+$swal2-background: #f0f7f4;
+
+@import '~sweetalert2/src/sweetalert2'
 
 </style>
