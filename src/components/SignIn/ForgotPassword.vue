@@ -40,10 +40,15 @@ export default {
         validationP(){
             var x = document.forms["fPassword"]["email1"].value;
             if (x == ""){
-            alert("Please input an email");
+            //alert("Please input an email");
+            this.$swal("Error", "Please input an email")
             }
             else {
-            alert("Mail has been sent");
+            this.$swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            )
             this.$router.push("/changepassword");
             }
         }
@@ -95,4 +100,21 @@ export default {
     height: 15%;
     width: 52%;
 }
+
+@import '~sweetalert2/src/variables';
+
+$swal2-background: #f0f7f4;
+
+@import '~sweetalert2/src/sweetalert2';
+
+.swal-text {
+  background-color: #FEFAE3;
+  padding: 17px;
+  border: 1px solid #F0E1A1;
+  display: block;
+  margin: 22px;
+  text-align: center;
+  color: #61534e;
+}
+
 </style>

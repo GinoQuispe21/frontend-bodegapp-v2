@@ -9,31 +9,31 @@
             <div class="container">
                 <div class = "row no-gutters">
                     <div class = "col-lg-7 px-5 pt-5">
-                        <img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3">
-                        <h3>First time here? Sign up to us!</h3>
+                        <img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3 px-3">
+                        <h3 class="px-3">First time here? Sign up to us!</h3>
                         <form>
-                            <div class="form-row">
+                            <div class="form-row px-3">
                                 <div class = "col-lg-8">
                                     <p>Write your email:</p>
-                                    <input type = "email" placeholder ="Email-Address" class ="form-control my-3 p-4">
+                                    <input type = "email" placeholder ="Email-Address" class ="form-control my-3 p-4" required>
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row px-3">
                                 <div class = "col-lg-8">
                                     <p>Write your password:</p>
-                                    <input type = "password" placeholder ="Password" id = "myPassword" class ="form-control my-3 p-4">
+                                    <input type = "password" placeholder ="Password" id = "myPassword" class ="form-control my-3 p-4" required>
                                     <input type="checkbox" @click="showPassword"> Show Password
                                 </div>
                             </div>
                             <br>
-                            <div class="form-row">
+                            <div class="form-row px-3">
                                 <div class = "col-lg-8">
                                     <p>Please, confirm your password:</p>
-                                    <input type = "password" placeholder ="Confirm-Password" id = "myCPassword" class ="form-control my-3 p-4">
+                                    <input type = "password" placeholder ="Confirm-Password" id = "myCPassword" class ="form-control my-3 p-4" required>
                                     <input type="checkbox" @click="showPassword"> Show Password
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row px-3">
                                 <div class = "col-lg-8">
                                     <router-link to="/register2" class ="go-register2"><button type ="button" class = "register mt-3 mb-4">Continue</button></router-link>
                                     <p>Already have an account? <router-link to="/" class ="back-login mt-3">Sign in here</router-link></p>

@@ -73,7 +73,12 @@ export default {
                 this.$swal('Please input the password');
             }
             else if(this.validationV2() == true){
-                alert("Password changed succesfully");
+                this.$swal.fire(
+                    'Good job!',
+                    'Password changed succesfully!',
+                    'success'
+                )
+                //alert("Password changed succesfully");
                 this.$router.push("/");
             }
             else{
@@ -136,5 +141,15 @@ $swal2-background: #F24236;
 $swal2-color-text: #F0F7F4;
 
 @import '~sweetalert2/src/sweetalert2';
+
+.swal-text {
+  background-color: #FEFAE3;
+  padding: 17px;
+  border: 1px solid #F0E1A1;
+  display: block;
+  margin: 22px;
+  text-align: center;
+  color: #61534e;
+}
 
 </style>
