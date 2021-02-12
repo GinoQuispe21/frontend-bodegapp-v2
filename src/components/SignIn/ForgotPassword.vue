@@ -41,7 +41,12 @@ export default {
             var x = document.forms["fPassword"]["email1"].value;
             if (x == ""){
             //alert("Please input an email");
-            this.$swal("Error", "Please input an email")
+            this.$swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Something went wrong!',
+                    }
+                )
             }
             else {
             this.$swal.fire(

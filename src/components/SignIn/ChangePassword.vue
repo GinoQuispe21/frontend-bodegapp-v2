@@ -137,8 +137,7 @@ export default {
 
 @import '~sweetalert2/src/variables';
 
-$swal2-background: #F24236;
-$swal2-color-text: #F0F7F4;
+$swal2-background: #f0f7f4;
 
 @import '~sweetalert2/src/sweetalert2';
 
