@@ -1,7 +1,6 @@
 <template>
-    <h1>ah</h1>
+    <h1>Custoomers</h1>
 </template>
-
 
 <script>
 export default {

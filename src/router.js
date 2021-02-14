@@ -12,6 +12,8 @@ export default new Router({
         {path: "/register3",  name:"register3", component:() => import("./components/SignUp/Register3")},
         {path: "/forgotpassword",  name:"forgotpassword", component:() => import("./components/SignIn/ForgotPassword")},
         {path: "/changepassword",  name:"changepassword", component:() => import("./components/SignIn/ChangePassword")},
-        {path: "/homepage",  name:"homepage", component:() => import("./components/Home/HomePage")}
+        {path: "/homepage",  name:"homepage", component:() => import("./components/Home/HomePage")},
+        {path: "/registerClient",  name:"registerClient", component:() => import("./components/Home/RegisterClient")},
+        {path: "/products",  name:"products", component:() => import("./components/Home/Products")}
     ]
 })
