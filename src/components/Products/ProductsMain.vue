@@ -1,5 +1,7 @@
 <template>
-    <h1>Custoomers</h1>
+    <v-card>
+        <h2>Products</h2>
+    </v-card>  
 </template>
 
 <script>
