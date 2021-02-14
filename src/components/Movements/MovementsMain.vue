@@ -1,5 +1,7 @@
 <template>
-<h1>xd</h1>
+    <v-card>
+        <h1>AAAAAA</h1>
+    </v-card>  
 </template>
 
 <script>

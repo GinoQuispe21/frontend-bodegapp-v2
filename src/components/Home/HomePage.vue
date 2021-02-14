@@ -11,10 +11,8 @@ export default {
     },
     mounted(){
     }
-
   }
 </script>
 
 <style scooped lang="scss">
-
 </style>
