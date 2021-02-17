@@ -39,11 +39,11 @@ export default {
     data: () => ({
         drawer:  true,
         links: [
-            {icon: 'dashboard', text: 'Dashboard',  route:'/homePage'},
+            {icon: 'dashboard', text: 'Home',  route:'/homePage'},
             {icon: 'point_of_sale',  text:'Movements', route: '/movements'},
             {icon: 'monetization_on', text:'Sales'},
             {icon: 'storefront', text:'Products',  route:'/products'},
-            {icon: 'people', text:'Customers', route:'/customers'}
+            {icon: 'people', text:'Customers', route:'/customers'},
         ],
     }),
     methods:{
