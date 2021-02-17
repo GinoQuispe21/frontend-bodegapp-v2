@@ -36,23 +36,23 @@
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Product Name*" required></v-text-field>
+                                    <v-text-field v-model="productName" label="Product Name*" required></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Provider Name*" required></v-text-field>
+                                    <v-text-field v-model="providerName" label="Provider Name*" required></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Sale Price*" required></v-text-field>
+                                    <v-text-field v-model="purchasePrice" label="Sale Price*" required></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Purchase Price*" required></v-text-field>
+                                    <v-text-field v-model="salePrice" label="Purchase Price*" required></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="#F87575" class="ma-2 white--text" @click="cancelar">Cancel</v-btn>
+                        <v-btn color="#F87575" class="ma-2 white--text" @click="cancelRegister">Cancel</v-btn>
                         <v-btn color="#778DA9" class="ma-2 white--text" @click="register">Register</v-btn>
                     </v-card-actions>
                 </v-card>
@@ -111,9 +111,13 @@ export default {
     data() {
         return{
             drawer: false,
-            search: '',
+            search: ''  ,
             dialogEdit: false,
             dialogDelete: false,
+            productName : null,
+            providerName : null,
+            purchasePrice : null,
+            salePrice : null,
             columns : [
                 {text: 'ID', align: 'left',sortable: false, value: 'id', class:'blue-grey darken-1 white--text'},
                 {text: 'PRODUCT', value:'productName', class:'blue-grey darken-1 white--text'},
@@ -131,6 +135,21 @@ export default {
         })
     },  
     methods: {
+        register (){
+            this.axios.post(baseURL + 'products',{
+                productName: this.productName,
+                providerName: this.providerName,
+                purchasePrice: this.purchasePrice,
+                salePrice: this.salePrice,
+            }).catch(error => {
+                    this.$swal.fire({
+                        icon: 'error',
+                        title: `${error}`,
+                        text: 'Something went wrong!',
+                        footer: '<a href>Why do I have this issue?</a>'
+                    })
+            })
+        },
         editProduct (item) {
             console.log(item.id);
             this.dialogEdit = true;
@@ -150,6 +169,13 @@ export default {
         },
         save (){
             this.dialogEdit = false;
+        },
+        cancelRegister (){
+            this.drawer = false;
+            this.productName = null;
+            this.providerName = null;
+            this.purchasePrice = null;
+            this.salePrice = null;
         }
     }
     
