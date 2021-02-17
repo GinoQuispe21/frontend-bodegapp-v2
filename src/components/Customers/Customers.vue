@@ -1,19 +1,19 @@
 <template>
     <v-app>
         <NavBar/>
-        <CustoomerMain/>
+        <CustomerMain/>
     </v-app>
 </template>
 
 <script>
 import NavBar from '@/components/Home/NavBar';
-import CustoomerMain from './CustoomerMain.vue';
+import CustomerMain from './CustomerMain.vue';
 
 export default {
     name: 'Customers',
     components :{
         NavBar,
-        CustoomerMain
+        CustomerMain
     }
 }
 </script>
