@@ -66,16 +66,16 @@
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Product Name*" required></v-text-field>
+                                    <v-text-field v-model="productName" label="Product Name*" required></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Provider Name*" required></v-text-field>
+                                    <v-text-field v-model="providerName" label="Provider Name*" required></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Sale Price*" required></v-text-field>
+                                    <v-text-field v-model="purchasePrice" label="Sale Price*" required></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Purchase Price*" required></v-text-field>
+                                    <v-text-field v-model="salePrice" label="Purchase Price*" required></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -118,6 +118,7 @@ export default {
             providerName : null,
             purchasePrice : null,
             salePrice : null,
+            index : null,
             columns : [
                 {text: 'ID', align: 'left',sortable: false, value: 'id', class:'blue-grey darken-1 white--text'},
                 {text: 'PRODUCT', value:'productName', class:'blue-grey darken-1 white--text'},
@@ -126,7 +127,8 @@ export default {
                 {text: 'PURCHASE PRICE', value:'purchasePrice', class:'blue-grey darken-1 white--text'},
                 {text: 'ACTIONS', value: 'actions', class:'blue-grey darken-1 white--text', sortable: false}
             ],
-            products:[]
+            products:[],
+            product: []
         }
     },
     mounted(){
@@ -150,19 +152,30 @@ export default {
                     })
             })
         },
-        editProduct (item) {
-            console.log(item.id);
-            this.dialogEdit = true;
-        },
-        deleteProduct (item) {
-            console.log(item.id);
+        deleteProduct (id) {
+            this.index = id;
             this.dialogDelete = true;
+        },
+        deleteItemConfirm () {
+            this.axios.delete(baseURL+'products/'+ this.index).then(response =>{
+                console.log(response)});
+            this.closeDelete();
         },
         closeDelete () {
             this.dialogDelete = false;
         },
-        deleteItemConfirm () {
-            this.closeDelete();
+        editProduct (id) {
+            console.log(id);
+            this.index = id;
+            this.axios.get(baseURL+'products/'+this.index).then(response => {
+                console.log(response.data);
+                this.product = response.data;
+                this.productName = this.product.productName;
+                this.providerName = this.product.providerName;
+                this.salePrice = this.product.salePrice;
+                this.purchasePrice =this.product.purchasePrice;
+            });
+            this.dialogEdit = true;
         },
         cancel (){
             this.dialogEdit = false;
@@ -211,7 +224,7 @@ export default {
 }
 
 .search{
-    width: 1100px;
+    width: 1400px;
 }
 
 .title-component{
