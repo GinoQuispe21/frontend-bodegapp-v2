@@ -143,6 +143,16 @@ export default {
                 providerName: this.providerName,
                 purchasePrice: this.purchasePrice,
                 salePrice: this.salePrice,
+            }).then(() =>{
+                this.axios.get(baseURL + 'products').then(res =>{
+                    this.products = res.data.content;
+                });
+                this.$swal.fire(
+                    'Good job!',
+                    'You register the product',
+                    'success'
+                );
+                this.drawer = false;
             }).catch(error => {
                     this.$swal.fire({
                         icon: 'error',
@@ -158,7 +168,11 @@ export default {
         },
         deleteItemConfirm () {
             this.axios.delete(baseURL+'products/'+ this.index).then(response =>{
-                console.log(response)});
+                console.log(response)}).then(() => {
+                    this.axios.get(baseURL + 'products').then(res =>{
+                        this.products = res.data.content;
+                    })
+                })
             this.closeDelete();
         },
         closeDelete () {
@@ -174,13 +188,39 @@ export default {
                 this.providerName = this.product.providerName;
                 this.salePrice = this.product.salePrice;
                 this.purchasePrice =this.product.purchasePrice;
-            });
+            })
             this.dialogEdit = true;
         },
         cancel (){
+            this.productName = null,
+            this.providerName = null,
+            this.purchasePrice = null,
+            this.salePrice = null,
             this.dialogEdit = false;
         },
         save (){
+            this.axios.put(baseURL+'products/'+this.index, {
+                productName: this.productName,
+                providerName: this.providerName,
+                purchasePrice: this.purchasePrice,
+                salePrice: this.salePrice,
+            }).then(() =>{
+                this.axios.get(baseURL + 'products').then(res =>{
+                    this.products = res.data.content;
+                });
+                this.$swal.fire(
+                    'Good job!',
+                    'You edit the product',
+                    'success'
+                );
+            }).catch(error => {
+                    this.$swal.fire({
+                        icon: 'error',
+                        title: `${error}`,
+                        text: 'Something went wrong!',
+                        footer: '<a href>Why do I have this issue?</a>'
+                    })
+            })
             this.dialogEdit = false;
         },
         cancelRegister (){
