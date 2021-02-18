@@ -11,7 +11,7 @@
                     <v-toolbar flat>
                         <div class="search">
                             <v-col cols="12" sm="12">
-                                <v-text-field v-model="search" append-icon="search" label="Serach Product" single-line hide-details></v-text-field>
+                                <v-text-field v-model="search" append-icon="search" label="Search Product" single-line hide-details></v-text-field>
                             </v-col>
                         </div>
                         <v-divider class="mx-4" inset vertical></v-divider>
