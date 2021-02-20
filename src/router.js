@@ -13,6 +13,7 @@ export default new Router({
         {path: "/forgotpassword",  name:"forgotpassword", component:() => import("./components/SignIn/ForgotPassword")},
         {path: "/changepassword",  name:"changepassword", component:() => import("./components/SignIn/ChangePassword")},
         {path: "/homepage",  name:"homepage", component:() => import("./components/Home/HomePage")},
+        {path: "/profile",  name:"profile", component:() => import("./components/Home/Profile")},
         {path: "/products",  name:"products", component:() => import("./components/Products/Products")},
         {path: "/customers", name:"customers", component:() => import("./components/Customers/Customers")},
         {path: "/movements", name:"movements", component:() => import("./components/Movements/Movements")}
