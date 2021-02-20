@@ -8,13 +8,12 @@
 <script>
 import NavBar from '@/components/Home/NavBar';
 import CustomerMain from './CustomerMain.vue';
-
 export default {
     name: 'Customers',
     components :{
         NavBar,
         CustomerMain
-    }
+    },
 }
 </script>
 

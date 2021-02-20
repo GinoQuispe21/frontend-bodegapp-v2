@@ -17,10 +17,12 @@
                     <v-avatar size="100">
                         <v-img src="../../assets/10_avatar-512.png"></v-img>
                     </v-avatar>
-                    <p class="white--text subheading mt-1 text-center">ñiño</p>
                 </v-flex>
             </v-layout>
             <v-list flat>
+                    <v-list-item-title class="title">
+                        {{this.adminUsername}} {{this.adminLastname}}
+                    </v-list-item-title>
                 <v-list-item v-for="link in links" :key="link.text" router :to="link.route" active-class="border">
                     <v-list-item-icon>
                         <v-icon>{{link.icon}}</v-icon>
@@ -35,17 +37,31 @@
 </template>
 
 <script>
+import { baseURL } from '@/baseURL';
 export default {
-    data: () => ({
-        drawer:  true,
+    admin : null,
+    adminUsername: null,
+    adminLastname: null,
+    data() {
+        return{
+             drawer:  true,
         links: [
-            {icon: 'dashboard', text: 'Home',  route:'/homePage'},
-            {icon: 'point_of_sale',  text:'Movements', route: '/movements'},
-            {icon: 'monetization_on', text:'Sales'},
-            {icon: 'storefront', text:'Products',  route:'/products'},
-            {icon: 'people', text:'Customers', route:'/customers'},
-        ],
-    }),
+                {icon: 'person', text: 'Profile', route: "/profile"},
+                {icon: 'dashboard', text: 'Home',  route:'/homePage'},
+                {icon: 'point_of_sale',  text:'Movements', route: '/movements'},
+                {icon: 'monetization_on', text:'Sales'},
+                {icon: 'storefront', text:'Products',  route:'/products'},
+                {icon: 'people', text:'Customers', route:'/customers'}
+            ]
+        }
+    },
+    mounted(){
+        this.axios.get(baseURL + 'users/1').then(res =>{
+            this.admin = res.data;
+            this.adminUsername = this.admin.username;
+            this.adminLastname = this.admin.lastname;
+        })
+    },
     methods:{
         signout(){
            this.$swal.fire({
