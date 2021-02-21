@@ -3,7 +3,7 @@
         <v-toolbar color="#F24236" flat app>
             <v-app-bar-nav-icon class="white-text" @click="drawer =!drawer"></v-app-bar-nav-icon>
             <v-toolbar-title class="text-uppercase white--text">
-                <span class="font-weight-light"><img src = "../../assets/safebag_color.png" class = "bodegaap Font-weight-bold py-3"></span>
+                <span class="font-weight-light"><img src = "../../assets/safebag_dark.png" class = "bodegaap Font-weight-bold py-3"></span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn flat color="#F87575" @click="signout()">
