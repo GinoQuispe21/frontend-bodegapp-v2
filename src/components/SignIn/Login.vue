@@ -19,12 +19,12 @@
                         <form name="login-form">
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "email" name="email" id="email" placeholder ="Email-Address" class ="form-control my-3 p-4" required>
+                                    <input v-model="uEmail" type = "email" name="email" id="email" placeholder ="Email-Address" class ="form-control my-3 p-4" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class = "col-lg-7">
-                                    <input type = "password" name="password" id="password"  placeholder ="******" class ="form-control my-3 p-4" required>
+                                    <input v-model="uPassword" type = "password" name="password" id="password"  placeholder ="******" class ="form-control my-3 p-4" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    //import { baseURL } from '@/baseURL';
+    import { baseURL } from '@/baseURL';
     export default  {
         name: "LogIn",
         data: ()=> {
@@ -51,19 +51,23 @@
 
             }
         },
+        mounted (){
+            this.axios.get(baseURL + 'users/1').then(response =>{
+                this.user = response.data;
+                this.email = this.user.email;
+                this.password = this.user.password;
+            })
+        },
         methods:{
             validationLogin(){
-                var Email = document.forms["login-form"]["email"].value;
-                var Password = document.forms["login-form"]["password"].value;
-
-                if((Email === "gino_21quispe@outlook.com") && (Password === "123")){
-                    this.$swal.fire(
+                if(this.uEmail === this.email && this.uPassword === this.password){
+                     this.$swal.fire(
                     'Good job!',
                     'You clicked the button!',
                     'success'
                     ).then(this.$router.push("/homepage"));
                 }
-                else{
+                else {
                     this.$swal.fire({
                         icon: 'error',
                         title: 'Oops...',
