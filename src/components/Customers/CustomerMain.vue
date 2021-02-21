@@ -24,7 +24,7 @@
                 </template>
         </v-data-table>
 
-<v-dialog v-model="drawer" max-width="500px">
+            <v-dialog v-model="drawer" max-width="500px">
                 <v-card>
                     <v-card-title class="brown darken-3">
                         <span class="headline" style="color:white">Register Customer</span>
@@ -50,7 +50,7 @@
                                 <v-col cols="12" sm="6">
                                     <v-text-field v-model="dni" label="DNI*" required></v-text-field>
                                 </v-col>
-                                <v-col cols="12" sm="6">
+                                <v-col cols="12">
                                     <v-text-field v-model="email" label="Email*" required></v-text-field>
                                 </v-col>
                             </v-row>
@@ -61,6 +61,65 @@
                         <v-btn color="#F87575" class="ma-2 white--text" @click="cancelRegister">Cancel</v-btn>
                         <v-btn color="#778DA9" class="ma-2 white--text" @click="register">Register</v-btn>
                     </v-card-actions>
+                </v-card>
+            </v-dialog>
+            
+            <v-dialog v-model="drawerCustomerAccount" max-width="600px">
+                <v-card>
+                    <v-card-title class="brown darken-3">
+                        <span class="headline" style="color:white">Create Customer Account</span>
+                    </v-card-title>
+                    <v-card-text>
+                        <h5 class="subt-drawer">Choose the pack for the customer account</h5>
+                        <v-container>
+                            <v-row dense>
+                                <v-col cols="12" sm="6">
+                                    <v-card color="#F87575" dark>
+                                        <v-card-title class="headline">Package 1</v-card-title>
+                                        <v-card-subtitle>
+                                            Listen to your favorite artists and albums whenever and wherever, online and offline.
+                                        </v-card-subtitle>
+                                        <v-card-actions>
+                                            <v-btn text>Listen Now</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-col>
+                                <v-col cols="12" sm="6">
+                                    <v-card color="#778DA9" dark>
+                                       <v-card-title class="headline">Package 2</v-card-title>
+                                        <v-card-subtitle>
+                                            Listen to your favorite artists and albums whenever and wherever, online and offline.
+                                        </v-card-subtitle>
+                                        <v-card-actions>
+                                            <v-btn text>Listen Now</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-col>
+                                <v-col cols="12" sm="6">
+                                    <v-card color="#32292F" dark>
+                                        <v-card-title class="headline">Package 3</v-card-title>
+                                        <v-card-subtitle>
+                                            Listen to your favorite artists and albums whenever and wherever, online and offline.
+                                        </v-card-subtitle>
+                                        <v-card-actions>
+                                            <v-btn text>Listen Now</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-col>
+                                <v-col cols="12" sm="6">
+                                    <v-card color="#F24236" dark>
+                                        <v-card-title class="headline">Customizable</v-card-title>
+                                        <v-card-subtitle>
+                                           In this option you can customize the options of the customer's credit account.
+                                        </v-card-subtitle>
+                                        <v-card-actions>
+                                            <v-btn text>Listen Now</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-col>
+                            </v-row>
+                        </v-container>
+                    </v-card-text>
                 </v-card>
             </v-dialog>
 
@@ -76,7 +135,7 @@
                 </v-card>
             </v-dialog>
 
- <v-dialog v-model="dialogEdit" max-width="500px">
+            <v-dialog v-model="dialogEdit" max-width="500px">
                 <v-card>
                     <v-card-title class="brown darken-3">
                         <span class="headline" style="color:white">Edit Customer</span>
@@ -128,6 +187,7 @@ export default {
     data() {
         return{
             drawer: false,
+            drawerCustomerAccount: false,
             dialogDelete: false,
             dialogEdit: false,
             search: ' ',
@@ -168,16 +228,16 @@ export default {
 
             }).then(() => {
                 this.axios.get(baseURL + 'users/1/customers').then(res =>{
-            console.log(res);
-            this.customers = res.data.content;
-            this.$swal.fire(
-                    'Nice',
-                    'Customer registered successfully!',
-                    )
-            this.drawer = false;
+                    console.log(res);
+                    this.customers = res.data.content;
+                    this.$swal.fire(
+                        'Nice',
+                        'Customer registered successfully!',
+                        )
+                    this.drawer = false;
+                    this.drawerCustomerAccount = true;
                 })
             //this.$parent.refresh();
-
             }).catch(error => {
                     this.$swal.fire({
                         icon: 'error',
@@ -187,7 +247,7 @@ export default {
                     })
             })
         },
-         cancelRegister (){
+        cancelRegister (){
             this.drawer = false;
             this.customerName = null,
             this.customerLName = null,
@@ -301,5 +361,10 @@ export default {
     height: 10%;
     width: 15%;
 }
-
+.subt-drawer{
+    position: relative;
+    top: 10px;
+    left: 13px;
+    color: black;
+}
 </style>
