@@ -77,7 +77,11 @@
                                     <v-card color="#F87575" dark>
                                         <v-card-title class="headline">Package 1</v-card-title>
                                         <v-card-subtitle>
-                                            Listen to your favorite artists and albums whenever and wherever, online and offline.
+                                            Tasa: 10%
+                                            Tipo: Interes Simple
+                                            Periodo: Mensual
+                                            Credito: 1000
+                                            Año: Ordinario
                                         </v-card-subtitle>
                                         <v-card-actions>
                                             <v-btn text>Listen Now</v-btn>
@@ -88,7 +92,12 @@
                                     <v-card color="#778DA9" dark>
                                        <v-card-title class="headline">Package 2</v-card-title>
                                         <v-card-subtitle>
-                                            Listen to your favorite artists and albums whenever and wherever, online and offline.
+                                            Tasa: 22%
+                                            Tipo: Interes Nominal
+                                            Periodo: Bimestral
+                                            Capitalizacion: Diaria
+                                            Credito: 1500
+                                            Año: Ordinario
                                         </v-card-subtitle>
                                         <v-card-actions>
                                             <v-btn text>Listen Now</v-btn>
@@ -99,7 +108,11 @@
                                     <v-card color="#32292F" dark>
                                         <v-card-title class="headline">Package 3</v-card-title>
                                         <v-card-subtitle>
-                                            Listen to your favorite artists and albums whenever and wherever, online and offline.
+                                            Tasa: 18%
+                                            Tipo: Interes Efectiva
+                                            Periodo: Mensual
+                                            Credito: 2000
+                                            Año: Ordinal
                                         </v-card-subtitle>
                                         <v-card-actions>
                                             <v-btn text>Listen Now</v-btn>
@@ -187,7 +200,7 @@ export default {
     data() {
         return{
             drawer: false,
-            drawerCustomerAccount: false,
+            drawerCustomerAccount: true,
             dialogDelete: false,
             dialogEdit: false,
             search: ' ',
