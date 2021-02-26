@@ -64,7 +64,7 @@
                 </v-card>
             </v-dialog>
             
-            <v-dialog v-model="drawerCustomerAccount" max-width="600px">
+            <v-dialog v-model="drawerCustomerAccount" max-width="1000px">
                 <v-card>
                     <v-card-title class="brown darken-3">
                         <span class="headline" style="color:white">Create Customer Account</span>
@@ -73,58 +73,65 @@
                         <h5 class="subt-drawer">Choose the pack for the customer account</h5>
                         <v-container>
                             <v-row dense>
-                                <v-col cols="12" sm="6">
+                                <v-col cols="14" sm="3">
                                     <v-card color="#F87575" dark>
                                         <v-card-title class="headline">Package 1</v-card-title>
-                                        <v-card-subtitle>
-                                            Tasa: 10%
-                                            Tipo: Interes Simple
-                                            Periodo: Mensual
-                                            Credito: 1000
-                                            Año: Ordinario
-                                        </v-card-subtitle>
+                                            <ul style="list-style: none">
+                                                <li>Tasa: 10%</li>
+                                                <li>Tipo: Interes Simple</li>
+                                                <li>Periodo: Mensual</li>
+                                                <li>Credito: 1000</li>
+                                                <li>Año: Ordinario</li>
+                                                <br>
+                                            </ul>
                                         <v-card-actions>
                                             <v-btn text>Listen Now</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
-                                <v-col cols="12" sm="6">
+                                <v-col cols="14" sm="3">
                                     <v-card color="#778DA9" dark>
                                        <v-card-title class="headline">Package 2</v-card-title>
-                                        <v-card-subtitle>
-                                            Tasa: 22%
-                                            Tipo: Interes Nominal
-                                            Periodo: Bimestral
-                                            Capitalizacion: Diaria
-                                            Credito: 1500
-                                            Año: Ordinario
-                                        </v-card-subtitle>
+                                        <ul style="list-style: none">
+                                            <li>Tasa: 22%</li>
+                                            <li>Tipo: Interes Nominal</li>
+                                            <li>Periodo: Bimestral</li>
+                                            <li>Capitalizacion: Diaria</li>
+                                            <li>Credito: 1500</li>
+                                            <li>Año: Ordinario</li>
+                                        </ul>
                                         <v-card-actions>
                                             <v-btn text>Listen Now</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
-                                <v-col cols="12" sm="6">
+                                <v-col cols="14" sm="3">
                                     <v-card color="#32292F" dark>
                                         <v-card-title class="headline">Package 3</v-card-title>
-                                        <v-card-subtitle>
-                                            Tasa: 18%
-                                            Tipo: Interes Efectiva
-                                            Periodo: Mensual
-                                            Credito: 2000
-                                            Año: Ordinal
-                                        </v-card-subtitle>
+                                        <ul style="list-style: none">
+                                            <li>Tasa: 18%</li>
+                                            <li>Tipo: Interes Efectiva</li>
+                                            <li>Periodo: Mensual</li>
+                                            <li>Credito: 2000</li>
+                                            <li>Año: Ordinal</li>
+                                            <br>
+                                        </ul>
                                         <v-card-actions>
                                             <v-btn text>Listen Now</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                 </v-col>
-                                <v-col cols="12" sm="6">
+                                <v-col cols="14" sm="3">
                                     <v-card color="#F24236" dark>
                                         <v-card-title class="headline">Customizable</v-card-title>
-                                        <v-card-subtitle>
-                                           In this option you can customize the options of the customer's credit account.
-                                        </v-card-subtitle>
+                                        <div class="customize-text">
+                                            In this option you can customize the options of the customer's credit account. 
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                        </div>
                                         <v-card-actions>
                                             <v-btn text>Listen Now</v-btn>
                                         </v-card-actions>
@@ -380,4 +387,9 @@ export default {
     left: 13px;
     color: black;
 }
+.customize-text{
+    position: relative;
+    left: 10px;
+}
+
 </style>
