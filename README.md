@@ -1,5 +1,9 @@
 # frontend-bodegapp-v2
 
+## Project Info
+### Vue application for stores
+
+
 ## Project setup
 ```
 npm install
